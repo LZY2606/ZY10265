@@ -1,0 +1,19 @@
+[package]
+name = "index-layer-mirror"
+version = "0.1.0"
+edition = "2021"
+description = "索引分层镜: read-only reviewer for git index, split-index and sparse-directory files"
+
+[lib]
+name = "ilm"
+path = "src/lib.rs"
+
+[[bin]]
+name = "index-layer-mirror"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+sha1 = "0.10"
